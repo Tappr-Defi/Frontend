@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tappr/signup_screen.dart';
 
-import 'personal_info_screen.dart';
 
 void main() {
   runApp(TapprApp());
@@ -93,7 +93,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PersonalInfoScreen()),
+                      MaterialPageRoute(builder: (context) => const SignUpScreen()),
                     );
                   },
                   child: Text(
@@ -188,12 +188,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     } else {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => PersonalInfoScreen()),
+                        MaterialPageRoute(builder: (context) => const SignUpScreen()),
                       );
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF1E3A5F),
+                    backgroundColor: Colors.teal,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),

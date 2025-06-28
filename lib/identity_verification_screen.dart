@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tappr/signup_screen.dart';
 
-import 'dashboard.dart';
 import 'document_option.dart';
 
 class IdentityVerificationScreen extends StatelessWidget {
@@ -99,7 +98,7 @@ class IdentityVerificationScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const DashboardScreen()),
+                      MaterialPageRoute(builder: (context) => const SignUpScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

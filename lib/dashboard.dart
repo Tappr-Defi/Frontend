@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tappr/wallet_id.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -108,7 +109,7 @@ class DashboardScreen extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E3A5F),
+                  color: Colors.teal[400],
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -201,7 +202,12 @@ class DashboardScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildActionButton(Icons.qr_code, 'Scan QR code', () {}),
+                    _buildActionButton(Icons.qr_code, 'Scan QR code', () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const WalletIdScreen()),
+                      );
+                    }),
                     _buildActionButton(Icons.history, 'Recent', () {}),
                     _buildActionButton(Icons.link_rounded, 'Send Link', () {}),
                   ],
@@ -272,14 +278,14 @@ class DashboardScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Last Transactions
+              // Recent Transactions
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      'Last Transactions',
+                      'Recent Transactions',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
